@@ -18,6 +18,7 @@ import java.util.List;
 public class Controller {
 
     @Autowired
+    
     RepositoryComp repositoryComp;
 
     @Autowired
@@ -43,7 +44,7 @@ public class Controller {
         var usuarioSalvo = repositoryUsu.save(usuario);
         return ResponseEntity.ok(usuarioSalvo);
     }
-
+    //
     @PostMapping("/cadastrarItem")
     public ResponseEntity<ListaCompras> insereItens(
             @RequestBody ListaCompras Itens
@@ -61,7 +62,7 @@ public class Controller {
         repositoryComp.deleteById(id);
         return ResponseEntity.ok(id + "Não encontrado");
     }
-
+//
     @GetMapping("/todosItens")
     public List<ListaCompras> getHistoricoCompras(){
         final List<ListaCompras> ListaItens = repositoryComp.findAll();
